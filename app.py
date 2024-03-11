@@ -55,8 +55,13 @@ def compute_frequency_dict(word, csv_file, folder_path):
 
 # This functions plots Ngram with legend outside the graph
 def plot_nGram(words):
-    csv_file = 'Book1.csv'
-    folder_path = 'F:\\IDP\\ngramViewer\\version4\\Book1'
+    # csv_file = 'Book1.csv'
+    # folder_path = 'F:\\IDP\\ngramViewer\\version4\\Book1'
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_file = os.path.join(current_dir, 'Book1.csv')
+    folder_path = os.path.join(current_dir, 'Book1')
+
     lst = []
     for i in range(len(words)):
         dict1 = compute_frequency_dict(words[i], csv_file, folder_path)

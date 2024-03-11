@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngram Viewer (Word Frequency Plot)</title>
+</head>
+<body>
+    <h1>Ngram Viewer (Word Frequency Plot)</h1>
+    <form action="/" method="POST">
+        <label for="words">Enter words (comma-separated):</label><br>
+        <input type="text" id="words" name="words" placeholder="Enter words" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if plot_data %}
+    <div>
+        <img src="data:image/png;base64,{{ plot_data }}" alt="Ngram Viewer (Word Frequency Plot)">
+    </div>
+    {% endif %}
+</body>
+</html>
+
